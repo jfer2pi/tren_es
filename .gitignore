@@ -1,0 +1,5 @@
+cache/
+.Rhistory
+.RData
+.Rproj.user/
+rsconnect/

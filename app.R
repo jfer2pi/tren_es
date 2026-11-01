@@ -736,7 +736,7 @@ ui <- page_sidebar(
   fillable = TRUE,
   sidebar = sidebar(
     width = 272,
-    open  = list(desktop = "open", mobile = "closed"),
+    open  = "desktop",   # open on desktop, closed on mobile (bslib 0.6.x syntax)
     tags$head(
       tags$style(HTML(lin_css)),
       tags$script(HTML("

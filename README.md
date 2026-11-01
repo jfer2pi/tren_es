@@ -43,9 +43,9 @@ The static GTFS file is downloaded on the first fetch and cached in `cache/`. If
 GitHub Pages only serves static files, so it can't run a Shiny server. Either of these works:
 
 - **Posit Connect Cloud** (deploys straight from this repo; the free tier needs a public repo):
-  1. Run `rsconnect::writeManifest(appFiles = "app.R")` and commit the resulting `manifest.json`.
-  2. In Connect Cloud, choose *Publish → Shiny*, pick this repo and `app.R`.
-  3. It redeploys on every push.
+  1. In Connect Cloud, choose *Publish → Shiny*, pick this repo, branch `main` and `app.R`. The included `manifest.json` lists R 4.3.3 and the exact package versions to install.
+  2. Turn on *Automatically publish on push* to redeploy on every commit.
+  3. If you add a package or change `app.R`'s dependencies, regenerate the manifest locally with `rsconnect::writeManifest(appFiles = "app.R")` and commit it.
 - **shinyapps.io**: run `rsconnect::deployApp(appFiles = "app.R", appName = "tren_es")`.
 
 ## How it works
